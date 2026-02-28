@@ -9,8 +9,7 @@ source: |
   and hash.sha256(sender.email.email) in (
     '46dacfaff3ee5ee4c0ddab6ae64b63cc68ecf05e470bb093abb2bb82f7135a7c', // TESTING new IOC to trigger pipeline PR
     '6b122aa3f31ca73a4e54eb80830c6635f4dbf37a2a1c408a628bed32dbb7c6cb', // TESTING observed impersonating DocuSign to deliver credential phishing pages
-    'f57fe5cd528d34e395a376553a2843fdb11ae83e634ce2433128c89f8d9e305b', // TESTING observed sending fake Zoom invoice lures to harvest credentials
-    'fba175de81987f0e58d60f3806b65f888f1d255cd45946b829e21c8c022b980f' // TESTING observed in smishing/email hybrid campaign impersonating PayPal support
+    'f57fe5cd528d34e395a376553a2843fdb11ae83e634ce2433128c89f8d9e305b' // TESTING observed sending fake Zoom invoice lures to harvest credentials
   )
   // END AUTO-GENERATED
 attack_types:

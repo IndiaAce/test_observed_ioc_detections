@@ -4,13 +4,14 @@ type: "rule"
 severity: "high"
 source: |
   type.inbound
+  // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
+  // Managed by automated IOC system - see test_observed_ioc_rules repo
   and hash.sha256(sender.email.domain.root_domain) in (
-    // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
-    // Managed by automated IOC system - see test_observed_ioc_rules repo
-    'f57fe5cd528d34e395a376553a2843fdb11ae83e634ce2433128c89f8d9e305b',
-    '6b122aa3f31ca73a4e54eb80830c6635f4dbf37a2a1c408a628bed32dbb7c6cb'
-    // END AUTO-GENERATED
+    '3d8cfa28760ada6db5244fb5a764eed8cc52795c4f88dd4e83c5999972f3f097', // observed root domain used in PayPal account suspension phishing
+    '451de57f685afbc783251e2d214a26d6c3b070e61ce9662efa2ddfa66356f80a', // observed root domain for Amazon impersonation phishing campaign
+    '5455ece7d6007f826e7c59f86eab721b241e1e0cb4dbcea608576309bbef78e6' // observed delivering malicious macro-laden invoice documents
   )
+  // END AUTO-GENERATED
 attack_types:
   - "BEC/Fraud"
   - "Credential Phishing"

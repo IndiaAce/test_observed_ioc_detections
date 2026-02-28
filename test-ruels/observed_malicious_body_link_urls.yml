@@ -4,13 +4,16 @@ type: "rule"
 severity: "high"
 source: |
   type.inbound
-  and any(.links,
-    .href_url.url in (
-      // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
-      // Managed by automated IOC system - see test_observed_ioc_rules repo
-      // END AUTO-GENERATED
-    )
+  // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
+  // Managed by automated IOC system - see test_observed_ioc_rules repo
+  and any(body.links,
+          hash.sha256(.href_url.url) in (
+            '34f08da1975d379a150c018b900fcafce8456d683df1bba194286b8883caf347', // observed full URL for Office 365 SSO phishing landing page
+            '7ec97bad281f2ac22135ab657d9f960c83b5158d3e39a74f25de06399611de17', // observed full URL hosting Microsoft credential phishing page
+            'ae846b63039ac2b837d61ababc9aab4effd78729ea32ab15ac4f2be7fda30194' // observed redirect URL used to evade URL reputation scanners
+          )
   )
+  // END AUTO-GENERATED
 attack_types:
   - "Credential Phishing"
   - "Malware/Ransomware"

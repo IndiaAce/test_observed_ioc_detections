@@ -4,13 +4,16 @@ type: "rule"
 severity: "high"
 source: |
   type.inbound
-  and any(.links,
-    .href_url.domain.domain in (
-      // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
-      // Managed by automated IOC system - see test_observed_ioc_rules repo
-      // END AUTO-GENERATED
-    )
+  // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
+  // Managed by automated IOC system - see test_observed_ioc_rules repo
+  and any(body.links,
+          hash.sha256(.href_url.domain.domain) in (
+            '4189caf376f56f12d32ffad5f60190fccf0d4293b10b34e1ba35f7fc353827f9', // observed as click-tracking redirect hop before final phishing landing page
+            'db8ec643d375cad5d496597d2cb40687b7bbc5d72a6752a00742a7b332d8d235', // observed subdomain hosting PayPal-themed credential harvesting form
+            'dedd95ea243339539a760e93213c93694900d7b25a7067d493d595453bef1a8c' // observed hosting Microsoft credential phishing login page
+          )
   )
+  // END AUTO-GENERATED
 attack_types:
   - "Credential Phishing"
   - "Malware/Ransomware"

@@ -8,7 +8,6 @@ source: |
   // Managed by automated IOC system - see test_observed_ioc_rules repo
   and any(body.links,
           hash.sha256(.href_url.domain.root_domain) in (
-            '3d28218517dafae399e00bac1f6a78bd8db9a32d96ecb0e24b1801e42d831d13', // observed as redirect infrastructure in multi-stage phishing chain
             '43f33dd2bd9238e6c489b3e4e8648a114394b545e22e9bea875b2fca4cf19dd5', // observed root domain for Microsoft 365 phishing campaign
             '6deab713813012ddfdd6d4dfb23bf83912a23970730d8ecd1633108afe22a626' // observed root domain hosting multiple credential phishing pages across subdomains
           )

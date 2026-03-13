@@ -6,7 +6,7 @@ source: |
   // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
   // Managed by automated IOC system - see test_observed_ioc_rules repo
   type.inbound
-  and any(body.links,
+  and any(body.current_thread.links,
           hash.sha256(.href_url.domain.domain) in (
             '4189caf376f56f12d32ffad5f60190fccf0d4293b10b34e1ba35f7fc353827f9', // observed as click-tracking redirect hop before final phishing landing page
             'db8ec643d375cad5d496597d2cb40687b7bbc5d72a6752a00742a7b332d8d235', // observed subdomain hosting PayPal-themed credential harvesting form

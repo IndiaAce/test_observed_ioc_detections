@@ -5,7 +5,12 @@ severity: "high"
 source: |
   // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
   // Managed by automated IOC system - see test_observed_ioc_rules repo
-  false // no active IOCs - rule is temporarily disabled
+  type.inbound
+  and any(body.current_thread.links,
+          hash.sha256(.href_url.url) in (
+            '38fda3603546a576a9861ed77a81eef554436649008adf15f542f845fea28c0f' // observed malicious link asociated with hubspot abuse campaign
+          )
+  )
   // END AUTO-GENERATED
 attack_types:
   - "Credential Phishing"

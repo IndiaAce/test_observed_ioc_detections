@@ -3,9 +3,9 @@ description: "Detects inbound messages sent from known malicious sender domains.
 type: "rule"
 severity: "high"
 source: |
-  type.inbound
   // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
   // Managed by automated IOC system - see test_observed_ioc_rules repo
+  type.inbound
   and hash.sha256(sender.email.domain.domain) in (
     '282f78fe930e4229b08fd04612b598833046d13cd9ac5489e553982dc36d3779', // observed distributing fake Zoom invoice PDF attachments with embedded macros
     '451de57f685afbc783251e2d214a26d6c3b070e61ce9662efa2ddfa66356f80a', // observed sending account suspension lures impersonating Amazon

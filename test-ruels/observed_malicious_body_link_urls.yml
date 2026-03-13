@@ -3,9 +3,9 @@ description: "Detects inbound messages containing specific known malicious URLs 
 type: "rule"
 severity: "high"
 source: |
-  type.inbound
   // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
   // Managed by automated IOC system - see test_observed_ioc_rules repo
+  type.inbound
   and any(body.links,
           hash.sha256(.href_url.url) in (
             '34f08da1975d379a150c018b900fcafce8456d683df1bba194286b8883caf347', // observed full URL for Office 365 SSO phishing landing page

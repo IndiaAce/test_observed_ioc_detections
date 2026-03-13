@@ -3,9 +3,9 @@ description: "Detects inbound messages containing links to known malicious root 
 type: "rule"
 severity: "high"
 source: |
-  type.inbound
   // AUTO-GENERATED IOC LIST - DO NOT EDIT MANUALLY
   // Managed by automated IOC system - see test_observed_ioc_rules repo
+  type.inbound
   and any(body.links,
           hash.sha256(.href_url.domain.root_domain) in (
             '43f33dd2bd9238e6c489b3e4e8648a114394b545e22e9bea875b2fca4cf19dd5', // observed root domain for Microsoft 365 phishing campaign

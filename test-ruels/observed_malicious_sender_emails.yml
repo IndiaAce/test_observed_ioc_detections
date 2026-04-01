@@ -7,8 +7,7 @@ source: |
   // Managed by automated IOC system - see test_observed_ioc_rules repo
   type.inbound
   and hash.sha256(sender.email.email) in (
-    'f2570cd302665c5e5670703ea23175efaed93fb0964508cec33b7f8187435296', // TESTING once again adding a new ioc to sender email
-    'f57fe5cd528d34e395a376553a2843fdb11ae83e634ce2433128c89f8d9e305b' // TESTING observed sending fake Zoom invoice lures to harvest credentials
+    'f2570cd302665c5e5670703ea23175efaed93fb0964508cec33b7f8187435296' // TESTING once again adding a new ioc to sender email
   )
   // END AUTO-GENERATED
 attack_types:

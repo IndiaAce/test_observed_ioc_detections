@@ -7,7 +7,6 @@ source: |
   // Managed by automated IOC system - see test_observed_ioc_rules repo
   type.inbound
   and hash.sha256(sender.email.domain.root_domain) in (
-    '451de57f685afbc783251e2d214a26d6c3b070e61ce9662efa2ddfa66356f80a', // observed root domain for Amazon impersonation phishing campaign
     'fd721e815576908813a44f3c93d99a59ba1f7315d45da4ec0804455f38da8f0b' // TESTING - adding new domain with the recent changes made... just making sure it still works
   )
   // END AUTO-GENERATED

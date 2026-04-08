@@ -8,7 +8,8 @@ source: |
   type.inbound
   and any(body.current_thread.links,
           hash.sha256(.href_url.url) in (
-            '38fda3603546a576a9861ed77a81eef554436649008adf15f542f845fea28c0f' // observed malicious link asociated with hubspot abuse campaign
+            '38fda3603546a576a9861ed77a81eef554436649008adf15f542f845fea28c0f', // observed malicious link asociated with hubspot abuse campaign
+            '4c99dd18c0eb57e725a6dc65d5acb7558a26b6dd9b467c0e3842e4e74f6efe06' // observed mcafee impersonation url
           )
   )
   // END AUTO-GENERATED
